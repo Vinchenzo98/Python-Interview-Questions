@@ -58,10 +58,7 @@ def longest_consec(strarr, k):
 
 longest_consec(['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television'],2)
 
-#array = ['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television']
 
-# print(array.index('man'))
-hello = "jell"
 
 
 
