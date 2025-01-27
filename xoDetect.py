@@ -39,14 +39,17 @@ def longest_consec(strarr, k):
     n = len(strarr)
     string_list = list()
     stored_results = list()
-    if n == 0 or k <= 0 or k <= 0:
+    if n == 0 or k > n or k <= 0:
         print("")
-    for i in range(0,n):  
-        word_part = strarr[i]
+    for i in range(n):  
+        print(i)
+        if i <= 1:
+            word_part = strarr[i]
+        else:
+            word_part = strarr[i -1]
         string_list.append(word_part)
         if len(string_list) == k:
             for j in range(0, len(string_list)):
-                if j == k - 1:
                     if j < n:
                        result = string_list[j - 1]  + string_list[j]
                     elif j == n:
@@ -55,6 +58,7 @@ def longest_consec(strarr, k):
             
             print(stored_results)
             string_list.clear()
+        
 
 longest_consec(['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television'],2)
 
