@@ -37,32 +37,25 @@ def digital_root(n):
 
 def longest_consec(strarr, k):
     n = len(strarr)
-    string_list = list()
     stored_results = list()
     if n == 0 or k > n or k <= 0:
         print("")
     for i in range(n):  
-        print(i)
-        if i <= 1:
-            word_part = strarr[i]
-        else:
-            word_part = strarr[i -1]
-        string_list.append(word_part)
-        if len(string_list) == k:
-            for j in range(0, len(string_list)):
-                    if j < n:
-                       result = string_list[j - 1]  + string_list[j]
-                    elif j == n:
-                       result = string_list[n - 1] + string_list[n] 
-                    stored_results.append(result)
-            
-            print(stored_results)
-            string_list.clear()
-        
+        if i <= k:         
+            nope = "nope"
+            stored_results.append(nope)
+                
+            for j in range(len(stored_results)):
+                if j < 1:
+                    result = stored_results[j]
+
+                if j > 1:
+                    result = stored_results[j] + stored_results[j + 1]
+                print(result)
+       #string_list.append(word_part)
+     
 
 longest_consec(['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television'],2)
-
-
 
 
 

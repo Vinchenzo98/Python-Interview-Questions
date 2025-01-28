@@ -22,19 +22,22 @@ def get_sum(a,b):
     new_list = list()
     new_list.append(a)
     new_list.append(b)
-    new_list.sort()
+    if b < a and b < 0 and a < 0:
+        new_list
+    else: 
+        new_list.sort()
 
     start_list = new_list[0]
     end_list = new_list[1]
 
-    if start_list < 0 and end_list < 0:
-        iterations = start_list - end_list
+    if start_list < 0 and end_list < 0 and end_list < start_list:
+        iterations = end_list - 1
         start_index = start_list
-        step = 1
- 
+        step = - 1
+
     else:
         iterations = end_list + 1
-        start_index = start_list
+        start_index = start_list 
         step = 1
     
     for i in range(start_index, iterations, step):
@@ -44,5 +47,5 @@ def get_sum(a,b):
     print("sum of list is", sum(store_list))
 
 
-#get_sum(-4109,-4256)
+get_sum(-595, -3087)
 
