@@ -26,28 +26,35 @@ def xo(s):
 
 
 def digital_root(n):
-
     x = str(n)
-    new_list = list()
-    for i in x:
-        new_list.append(i)
-        print(new_list)
-    
-    print(sum(new_list))
+    new_list = [int(i) for i in x]
+    sum_value = sum(new_list)
+    if sum_value <= 9:
+        return sum_value
+    else:
+        while sum_value > 9:
+            new_list.clear()
+            value = str(sum_value)
+            new_list = [int(j) for j in value]
+            sum_value = sum(new_list)
+            if sum_value <= 9:
+                return sum_value
 
-def longest_consec(strarr, k):
-    n = len(strarr)
-    stored_values = list()
-    if n == 0 or k > n or k <= 0:
-        return ""
-    for i in range(n):
-        print(i)
-        #new_list = list(filter(lambda i: i <= k, strarr))
-        #stored_values.append(new_list)
-    # print(new_list)
-    # print(stored_values)
+
+
+# def longest_consec(strarr, k):
+#     n = len(strarr)
+#     stored_values = list()
+#     if n == 0 or k > n or k <= 0:
+#         return ""
+#     for i in range(n):
+#         print(i)
+#         #new_list = list(filter(lambda i: i <= k, strarr))
+#         #stored_values.append(new_list)
+#     # print(new_list)
+#     # print(stored_values)
     
-longest_consec(['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television'],3)
+# longest_consec(['hello', 'guy', 'man', 'person', 'great', 'awesome', 'television'],3)
 
 
 
